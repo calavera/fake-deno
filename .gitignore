@@ -1,3 +1,4 @@
 .next
 cache
 bin
+deno-server.js
