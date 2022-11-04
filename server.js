@@ -1,8 +1,8 @@
 const { cwd, chdir } = require('node:process');
 const { exec } = require('node:child_process');
-const { rename } = require('node:fs');
+const { cp } = require('node:fs');
 
-rename(`${cwd()}/cache`, '/tmp/cache', (error) => {
+cp(`${cwd()}/cache`, '/tmp/cache', { recursive: true }, (error) => {
   if (error) throw error;
 });
 process.env.DENO_DIR = '/tmp/cache';
