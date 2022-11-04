@@ -8,6 +8,7 @@ frontend:
         - export PATH="${DENO_INSTALL}/bin:${PATH}"
     build:
       commands:
+        - export DENO_DIR=${PWD}/cache
         - make build
   artifacts:
     baseDirectory: .next
