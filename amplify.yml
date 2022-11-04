@@ -1,0 +1,18 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - export DENO_INSTALL=${PWD}
+        - curl -fsSL https://deno.land/install.sh | sh
+        - export PATH="${DENO_INSTALL}/bin:${PATH}"
+    build:
+      commands:
+        - make build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - target/**/*
