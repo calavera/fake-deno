@@ -5,5 +5,5 @@ build:
 	deno cache app/main.ts --import-map=app/import_map.json
 	cd app && deno bundle main.ts deno-server.js
 	mkdir -p .next/standalone
-	cp -r server.js ${DENO_INSTALL}/bin app/deno-server.js static .next/standalone/
+	cp -r server.js ${DENO_INSTALL}/bin app/deno-server.js app/static .next/standalone/
 
